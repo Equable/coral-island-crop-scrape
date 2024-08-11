@@ -13,22 +13,24 @@ async function ensureDirectoryExists(filePath: string): Promise<void> {
   }
 }
 
-export async function writeArrayToJsonFile(
+export async function writeArrayToTsFile(
   data: Array<Crop>,
   prettyPrint = false,
 ) {
   try {
-    const jsonString = JSON.stringify(data, null, prettyPrint ? 2 : 0);
+    // Create TypeScript file content
+    const tsContent = `import { Crop } from '../../types/types';\n\nexport const crops: Crop[] = ${JSON.stringify(data, null, prettyPrint ? 2 : 0)};\n`;
+
     const filePath = path.join(
       process.cwd(),
-      `src/json/v${process.env.CROPS_VERSION}/crops.json`,
+      `src/crops/v${process.env.CROPS_VERSION}/crops.ts`,
     );
 
     // Ensure that all directories in the file path exist
     await ensureDirectoryExists(filePath);
 
-    // Write the JSON string to the file
-    await writeFile(filePath, jsonString, 'utf8');
+    // Write the TypeScript content to the file
+    await writeFile(filePath, tsContent, 'utf8');
 
     console.log(`Array successfully written to ${filePath}`);
   } catch (error) {

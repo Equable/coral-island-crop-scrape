@@ -106,7 +106,7 @@ export const getCrop = async (url: string) => {
     seedType &&
     growthTime &&
     quantityPerHarvest &&
-    seasons &&
+    seasons.length > 0 &&
     name &&
     sellPrice
   ) {

@@ -26,7 +26,7 @@ export interface Profitability {
 }
 
 export interface Artisan {
-  process: EnumProcess;
+  process: `${EnumProcess}`;
   cropCost: number;
   timeToProcess: number;
   pastProcessTime?: number;
@@ -35,15 +35,16 @@ export interface Artisan {
   quantityPerHarvest: number;
   profitability: Profitability;
   handlePayedOff?: boolean;
+  totalProcessTime: number;
 }
 
 export interface BaseCrop {
   name: string;
   cropCost: number;
-  cropType: EnumCropType;
-  seedType: EnumSeedType;
+  cropType: `${EnumCropType}`;
+  seedType: `${EnumSeedType}`;
   growthTime: number;
-  seasons: EnumSeasons[];
+  seasons: `${EnumSeasons}`[];
   profitability: Profitability;
   quantityPerHarvest: number;
   regrowthTime?: number;

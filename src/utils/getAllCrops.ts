@@ -1,7 +1,7 @@
 import { fillDom } from './scrapeFunctions';
 import { Crop } from '../types/types';
 import { getCrop } from './getCrop';
-import { writeArrayToJsonFile } from './arrayToJson';
+import { writeArrayToTsFile } from './arrayToTs';
 import path from 'path';
 import { alphabet, HOST } from '../constants/constants';
 
@@ -46,5 +46,5 @@ export const getAllCrops = async () => {
       crops.push(crop);
     }
   }
-  await writeArrayToJsonFile(crops, true);
+  await writeArrayToTsFile(crops, true);
 };
