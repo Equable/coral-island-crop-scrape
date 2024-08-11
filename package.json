@@ -1,0 +1,29 @@
+{
+  "name": "coral-island-crop-scrape",
+  "version": "1.0.0",
+  "description": "Inlcuded are files in order to scrape coral island wiki for crops and their potential profits/sell prices/ etc",
+  "main": "index.js",
+  "repository": "git@github.com:Equable/coral-island-crop-scrape.git",
+  "author": "https://github.com/Equable",
+  "license": "GPL-3.0-only",
+  "devDependencies": {
+    "@eslint/js": "^9.9.0",
+    "eslint": "9.x",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "globals": "^15.9.0",
+    "prettier": "^3.3.3",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.0.1"
+  },
+  "dependencies": {
+    "@types/jsdom": "^21.1.7",
+    "dotenv": "^16.4.5",
+    "jsdom": "^24.1.1"
+  },
+  "scripts": {
+    "json": "tsx src/main.ts",
+    "format": "prettier --write 'src/**/*.{ts,js,json,md}'",
+    "lint": "eslint 'src/**/*.{ts,js}'"
+  }
+}
