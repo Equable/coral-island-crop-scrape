@@ -336,8 +336,4 @@ EnumGrades {
 ### Running Scrape
 
 1. Install [tsx](https://www.npmjs.com/package/tsx)
-2. If any changes have been made to the json generation. Please update `.env`
-   crops version before running (see versioning below)
-3. When steps 1 and 2 are complete update index.ts to export the new version of
-   crop array. Do not delete old imports please. We will try to maintain them
-   for some time.
+2. Run `yarn generate-crops` to proudce updated crops file
