@@ -1,4 +1,4 @@
-import { getAllCrops } from './utils/getAllCrops';
+import { getAllCrops } from './getAllCrops';
 import dotenv from 'dotenv';
 
 dotenv.config();

@@ -2,7 +2,13 @@
   "name": "coral-island-crop-scrape",
   "version": "1.0.0",
   "description": "Inlcuded are files in order to scrape coral island wiki for crops and their potential profits/sell prices/ etc",
-  "main": "dist/package.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "repository": "git@github.com:Equable/coral-island-crop-scrape.git",
   "author": "https://github.com/Equable",
   "license": "GPL-3.0-only",
@@ -22,8 +28,9 @@
     "jsdom": "^24.1.1"
   },
   "scripts": {
-    "generate-crops": "tsx src/main.ts",
+    "generate-crops": "tsx src/utils/runScrape.ts",
     "format": "prettier --write 'src/**/*.{ts,js,json,md}'",
-    "lint": "eslint 'src/**/*.{ts,js}'"
+    "lint": "eslint 'src/**/*.{ts,js}'",
+    "build": "npx tsc"
   }
 }

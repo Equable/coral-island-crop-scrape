@@ -16,7 +16,6 @@ export class Crop extends Profits implements CropType {
   growthTime: number;
   seasons: EnumSeasons[];
   regrowthTime?: number;
-  handlePayedOff?: boolean;
   [OIL]?: Artisan;
   [JAR]?: Artisan;
   [HONEY]?: Artisan;
