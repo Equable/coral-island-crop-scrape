@@ -1,6 +1,6 @@
 {
   "name": "coral-island-crop-scrape",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Inlcuded are files in order to scrape coral island wiki for crops and their potential profits/sell prices/ etc",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
