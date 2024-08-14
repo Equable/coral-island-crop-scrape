@@ -1,15 +1,7 @@
 # coral-island-crop-scrape
 
-This is a script used to scrape all crops from the coral island wiki. Its open
-to contribution, its pretty rough but Would be nice if it can be made better.
-All new versions of json should be stored in a different folder.
-
-## Running Scrape
-
-1. Install [tsx](https://www.npmjs.com/package/tsx)
-2. If any changes have been made to the json generation. Please update `.env`
-   crops version before running
-3. When steps 1 and 2 are complete
+The following is an importable library that provides scraped data of all crops
+of the coral island wiki including usable enums and types.
 
 ## Crop Structure and Samples
 
@@ -17,8 +9,8 @@ Currently you can import `cropv1` for the following data as an array of `Crop`
 
 ### Notes
 
-- PO means `payed off` only relevant for saplings
-- PPD means `pay per day`
+- `PO` means `payed off` only relevant for saplings
+- `PPD` means `pay per day`
 - PPD assumes perfect harvest times.
 - PPD for any Artisan field (i.e., Jar, Honey, Aged, etc.) assumes that you are
   able to process the item at that artisan step synchronously. Let's say you get
@@ -27,6 +19,9 @@ Currently you can import `cropv1` for the following data as an array of `Crop`
 - Each Artisan step takes into account any previous process time when
   calculating PPD. So if the orchid takes 12 days to grow, then 3 days to
   process to honey, then aged PPD will be: `profit/(12 + 3 + aged process time)`
+- All saplings ignore their `growthTime` when calculating PPD. This was to
+  reduce complexity. Assumes they are planted and grown before their harvestable
+  seasons.
 
 ### V1 Types
 
@@ -313,10 +308,23 @@ EnumGrades {
 }
 ```
 
-## Contribution
+## Contributing
+
+### Versioning
 
 - If you make any changes to scrape functions. Please update .env version.
   - change Major version if there are changes to the resulting crops object
     shape. I.E new fields, removed fields (2_0_0)
   - Change minor version if object shape remains the same but calculations get
     updated. (1_1_0)
+  - Change patch version only if refreshing data. I.E re-running scrape as new
+    crops were added.
+
+### Running Scrape
+
+1. Install [tsx](https://www.npmjs.com/package/tsx)
+2. If any changes have been made to the json generation. Please update `.env`
+   crops version before running (see versioning below)
+3. When steps 1 and 2 are complete update index.ts to export the new version of
+   crop array. Do not delete old imports please. We will try to maintain them
+   for some time.
