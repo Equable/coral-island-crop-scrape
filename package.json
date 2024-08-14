@@ -31,6 +31,6 @@
     "generate-crops": "tsx src/utils/runScrape.ts",
     "format": "prettier --write 'src/**/*.{ts,js,json,md}'",
     "lint": "eslint 'src/**/*.{ts,js}'",
-    "build": "npx tsc"
+    "build": "rm -rf ./dist && npx tsc"
   }
 }
