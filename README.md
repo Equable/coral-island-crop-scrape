@@ -7,6 +7,19 @@ of the coral island wiki including usable enums and types.
 
 Currently you can import `cropv1` for the following data as an array of `Crop`
 
+## Adding to project
+
+```
+ yarn add coral-island-crop-scrape
+```
+
+In your project you should be able to import as needed:
+
+```
+import { EnumCropType, crops } from "coral-island-crop-scrape";
+
+```
+
 ### Notes
 
 - `PO` means `payed off` only relevant for saplings
@@ -312,11 +325,11 @@ EnumGrades {
 
 ### Versioning
 
-- If you make any changes to scrape functions. Please update .env version.
+- If you make any changes to scrape functions. Please update version.
   - change Major version if there are changes to the resulting crops object
-    shape. I.E new fields, removed fields (2_0_0)
+    shape. I.E new fields, removed fields (2.0.0)
   - Change minor version if object shape remains the same but calculations get
-    updated. (1_1_0)
+    updated. (1.1.0)
   - Change patch version only if refreshing data. I.E re-running scrape as new
     crops were added.
 

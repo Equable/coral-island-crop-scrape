@@ -46,5 +46,5 @@ export const getAllCrops = async () => {
       crops.push(crop);
     }
   }
-  await writeArrayToTsFile(crops, true);
+  await writeArrayToTsFile(crops);
 };

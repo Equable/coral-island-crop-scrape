@@ -1,6 +1,6 @@
 {
   "name": "coral-island-crop-scrape",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Inlcuded are files in order to scrape coral island wiki for crops and their potential profits/sell prices/ etc",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -14,19 +14,17 @@
   "license": "GPL-3.0-only",
   "devDependencies": {
     "@eslint/js": "^9.9.0",
+    "@types/jsdom": "^21.1.7",
     "eslint": "9.x",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "globals": "^15.9.0",
+    "jsdom": "^24.1.1",
     "prettier": "^3.3.3",
     "typescript": "^5.5.4",
     "typescript-eslint": "^8.0.1"
   },
-  "dependencies": {
-    "@types/jsdom": "^21.1.7",
-    "dotenv": "^16.4.5",
-    "jsdom": "^24.1.1"
-  },
+  "dependencies": {},
   "scripts": {
     "generate-crops": "tsx src/utils/runScrape.ts",
     "format": "prettier --write 'src/**/*.{ts,js,json,md}'",
