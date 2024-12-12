@@ -5,7 +5,7 @@ of the coral island wiki including usable enums and types.
 
 ## Crop Structure and Samples
 
-Currently you can import `cropv1` for the following data as an array of `Crop`
+Currently you can import `crops` for the following data as an array of `Crop`
 
 ## Adding to project
 
@@ -74,6 +74,7 @@ Artisan {
 BaseCrop {
   name: string;
   cropCost: number;
+  isOceanCrop: boolean;
   cropType: `${EnumCropType}`;
   seedType: `${EnumSeedType}`;
   growthTime: number;
@@ -95,184 +96,244 @@ Crop extends BaseCrop, ArtisianCropParts {}
 ### V1 Sample Crop
 
 ```
-  {
-    cropCost: 75,
-    totalPossibleHarvests: 1,
-    quantityPerHarvest: 1,
-    totalProcessTime: 8,
-    handlePayedOff: false,
-    profitability: {
-      sellPrice: {
-        base: 130,
-        bronze: 150,
-        silver: 194,
-        gold: 195,
-        osmium: 260,
+   {
+    "cropCost": 50,
+    "totalPossibleHarvests": 1,
+    "quantityPerHarvest": 1,
+    "totalProcessTime": 11,
+    "handlePayedOff": false,
+    "profitability": {
+      "sellPrice": {
+        "base": 105,
+        "bronze": 121,
+        "silver": 137,
+        "gold": 158,
+        "osmium": 210
       },
-      sellPriceImproved: {
-        base: 150,
-        bronze: 172,
-        silver: 194,
-        gold: 224,
-        osmium: 299,
+      "sellPriceImproved": {
+        "base": 121,
+        "bronze": 139,
+        "silver": 157,
+        "gold": 181,
+        "osmium": 242
       },
-      profit: {
-        base: 55,
-        bronze: 75,
-        silver: 119,
-        gold: 120,
-        osmium: 185,
+      "profit": {
+        "base": 55,
+        "bronze": 71,
+        "silver": 87,
+        "gold": 108,
+        "osmium": 160
       },
-      profitImproved: {
-        base: 75,
-        bronze: 97,
-        silver: 119,
-        gold: 149,
-        osmium: 224,
+      "profitImproved": {
+        "base": 71,
+        "bronze": 89,
+        "silver": 107,
+        "gold": 131,
+        "osmium": 192
       },
-      profitPO: null,
-      profitPOImproved: null,
-      payPerDay: {
-        base: 6.875,
-        bronze: 9.375,
-        silver: 14.875,
-        gold: 15,
-        osmium: 23.125,
+      "profitPO": null,
+      "profitPOImproved": null,
+      "payPerDay": {
+        "base": 5,
+        "bronze": 6.454545454545454,
+        "silver": 7.909090909090909,
+        "gold": 9.818181818181818,
+        "osmium": 14.545454545454545
       },
-      payPerDayImproved: {
-        base: 9.375,
-        bronze: 12.125,
-        silver: 14.875,
-        gold: 18.625,
-        osmium: 28,
+      "payPerDayImproved": {
+        "base": 6.454545454545454,
+        "bronze": 8.090909090909092,
+        "silver": 9.727272727272727,
+        "gold": 11.909090909090908,
+        "osmium": 17.454545454545453
       },
-      payPerDayPO: null,
-      payPerDayPOImproved: null,
+      "payPerDayPO": null,
+      "payPerDayPOImproved": null
     },
-    name: 'Orchid',
-    seasons: ['fall'],
-    growthTime: 8,
-    cropType: 'flower',
-    seedType: 'seed',
-    regrowthTime: 0,
-    honey: {
-      cropCost: 75,
-      totalPossibleHarvests: 1,
-      quantityPerHarvest: 1,
-      totalProcessTime: 10,
-      handlePayedOff: false,
-      profitability: {
-        sellPrice: {
-          base: 390,
-          bronze: 450,
-          silver: 505,
-          gold: 585,
-          osmium: 780,
+    "name": "Watermelon",
+    "seasons": ["fall"],
+    "growthTime": 11,
+    "isOceanCrop": false,
+    "cropType": "fruit",
+    "seedType": "seed",
+    "regrowthTime": 0,
+    "jar": {
+      "cropCost": 50,
+      "totalPossibleHarvests": 1,
+      "quantityPerHarvest": 1,
+      "totalProcessTime": 11.25,
+      "handlePayedOff": false,
+      "profitability": {
+        "sellPrice": {
+          "base": 175,
+          "bronze": 195,
+          "silver": 220,
+          "gold": 250,
+          "osmium": 330
         },
-        sellPriceImproved: {
-          base: 448,
-          bronze: 517,
-          silver: 580,
-          gold: 672,
-          osmium: 896,
+        "sellPriceImproved": {
+          "base": 201,
+          "bronze": 224,
+          "silver": 252,
+          "gold": 287,
+          "osmium": 379
         },
-        profit: {
-          base: 315,
-          bronze: 375,
-          silver: 430,
-          gold: 510,
-          osmium: 705,
+        "profit": {
+          "base": 125,
+          "bronze": 145,
+          "silver": 170,
+          "gold": 200,
+          "osmium": 280
         },
-        profitImproved: {
-          base: 373,
-          bronze: 442,
-          silver: 505,
-          gold: 597,
-          osmium: 821,
+        "profitImproved": {
+          "base": 151,
+          "bronze": 174,
+          "silver": 202,
+          "gold": 237,
+          "osmium": 329
         },
-        profitPO: null,
-        profitPOImproved: null,
-        payPerDay: {
-          base: 31.5,
-          bronze: 37.5,
-          silver: 43,
-          gold: 51,
-          osmium: 70.5,
+        "profitPO": null,
+        "profitPOImproved": null,
+        "payPerDay": {
+          "base": 11.11111111111111,
+          "bronze": 12.88888888888889,
+          "silver": 15.11111111111111,
+          "gold": 17.77777777777778,
+          "osmium": 24.88888888888889
         },
-        payPerDayImproved: {
-          base: 37.3,
-          bronze: 44.2,
-          silver: 50.5,
-          gold: 59.7,
-          osmium: 82.1,
+        "payPerDayImproved": {
+          "base": 13.422222222222222,
+          "bronze": 15.466666666666667,
+          "silver": 17.955555555555556,
+          "gold": 21.066666666666666,
+          "osmium": 29.244444444444444
         },
-        payPerDayPO: null,
-        payPerDayPOImproved: null,
+        "payPerDayPO": null,
+        "payPerDayPOImproved": null
       },
-      process: 'honey',
-      timeToProcess: 2,
-      cropLifeSpan: 8,
-      pastProcessTime: 0,
+      "process": "jar",
+      "timeToProcess": 0.25,
+      "cropLifeSpan": 11,
+      "pastProcessTime": 0
     },
-    aged: {
-      cropCost: 75,
-      totalPossibleHarvests: 1,
-      quantityPerHarvest: 1,
-      totalProcessTime: 16,
-      handlePayedOff: false,
-      profitability: {
-        sellPrice: {
-          base: 1755,
-          bronze: 2025,
-          silver: 2275,
-          gold: 2635,
-          osmium: 3510,
+    "keg": {
+      "cropCost": 50,
+      "totalPossibleHarvests": 1,
+      "quantityPerHarvest": 1,
+      "totalProcessTime": 11.5,
+      "handlePayedOff": false,
+      "profitability": {
+        "sellPrice": {
+          "base": 230,
+          "bronze": 265,
+          "silver": 300,
+          "gold": 350,
+          "osmium": 460
         },
-        sellPriceImproved: {
-          base: 2018,
-          bronze: 2328,
-          silver: 2616,
-          gold: 3030,
-          osmium: 4036,
+        "sellPriceImproved": {
+          "base": 264,
+          "bronze": 304,
+          "silver": 345,
+          "gold": 402,
+          "osmium": 529
         },
-        profit: {
-          base: 1680,
-          bronze: 1950,
-          silver: 2200,
-          gold: 2560,
-          osmium: 3435,
+        "profit": {
+          "base": 180,
+          "bronze": 215,
+          "silver": 250,
+          "gold": 300,
+          "osmium": 410
         },
-        profitImproved: {
-          base: 1943,
-          bronze: 2253,
-          silver: 2541,
-          gold: 2955,
-          osmium: 3961,
+        "profitImproved": {
+          "base": 214,
+          "bronze": 254,
+          "silver": 295,
+          "gold": 352,
+          "osmium": 479
         },
-        profitPO: null,
-        profitPOImproved: null,
-        payPerDay: {
-          base: 105,
-          bronze: 121.875,
-          silver: 137.5,
-          gold: 160,
-          osmium: 214.6875,
+        "profitPO": null,
+        "profitPOImproved": null,
+        "payPerDay": {
+          "base": 15.652173913043478,
+          "bronze": 18.695652173913043,
+          "silver": 21.73913043478261,
+          "gold": 26.08695652173913,
+          "osmium": 35.65217391304348
         },
-        payPerDayImproved: {
-          base: 121.4375,
-          bronze: 140.8125,
-          silver: 158.8125,
-          gold: 184.6875,
-          osmium: 247.5625,
+        "payPerDayImproved": {
+          "base": 18.608695652173914,
+          "bronze": 22.08695652173913,
+          "silver": 25.652173913043477,
+          "gold": 30.608695652173914,
+          "osmium": 41.65217391304348
         },
-        payPerDayPO: null,
-        payPerDayPOImproved: null,
+        "payPerDayPO": null,
+        "payPerDayPOImproved": null
       },
-      process: 'aged',
-      timeToProcess: 6,
-      cropLifeSpan: 8,
-      pastProcessTime: 2,
+      "process": "keg",
+      "timeToProcess": 0.5,
+      "cropLifeSpan": 11,
+      "pastProcessTime": 0
     },
+    "aged": {
+      "cropCost": 50,
+      "totalPossibleHarvests": 1,
+      "quantityPerHarvest": 1,
+      "totalProcessTime": 17.5,
+      "handlePayedOff": false,
+      "profitability": {
+        "sellPrice": {
+          "base": 1035,
+          "bronze": 1195,
+          "silver": 1350,
+          "gold": 1575,
+          "osmium": 2070
+        },
+        "sellPriceImproved": {
+          "base": 1190,
+          "bronze": 1374,
+          "silver": 1552,
+          "gold": 1811,
+          "osmium": 2380
+        },
+        "profit": {
+          "base": 985,
+          "bronze": 1145,
+          "silver": 1300,
+          "gold": 1525,
+          "osmium": 2020
+        },
+        "profitImproved": {
+          "base": 1140,
+          "bronze": 1324,
+          "silver": 1502,
+          "gold": 1761,
+          "osmium": 2330
+        },
+        "profitPO": null,
+        "profitPOImproved": null,
+        "payPerDay": {
+          "base": 56.285714285714285,
+          "bronze": 65.42857142857143,
+          "silver": 74.28571428571429,
+          "gold": 87.14285714285714,
+          "osmium": 115.42857142857143
+        },
+        "payPerDayImproved": {
+          "base": 65.14285714285714,
+          "bronze": 75.65714285714286,
+          "silver": 85.82857142857142,
+          "gold": 100.62857142857143,
+          "osmium": 133.14285714285714
+        },
+        "payPerDayPO": null,
+        "payPerDayPOImproved": null
+      },
+      "process": "aged",
+      "timeToProcess": 6,
+      "cropLifeSpan": 11,
+      "pastProcessTime": 0.5
+    }
   },
 ```
 

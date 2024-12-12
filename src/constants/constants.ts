@@ -2,7 +2,7 @@ import { EnumProcess } from '../enums/enums';
 
 export const HOST = 'https://coralisland.fandom.com';
 
-export const COST_PATTERN = / × /i;
+export const COST_PATTERN = /×/i;
 export const PARSE_COST_PATTERN = /\b\d{1,}(?:,\d{3})*\b/;
 export const SELL_PRICES_PATTERN = /Sell prices/i;
 export const SELL_PRICES_IMPROVED_PATTERN = /Sell prices with Crop Price/i;

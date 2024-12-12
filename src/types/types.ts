@@ -41,6 +41,7 @@ export interface Artisan {
 export interface BaseCrop {
   name: string;
   cropCost: number;
+  isOceanCrop: boolean;
   cropType: `${EnumCropType}`;
   seedType: `${EnumSeedType}`;
   growthTime: number;
@@ -86,4 +87,5 @@ export interface CropConstructor
   cropType: EnumCropType;
   seedType: EnumSeedType;
   regrowthTime?: number;
+  isOceanCrop: boolean;
 }

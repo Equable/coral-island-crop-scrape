@@ -1,6 +1,6 @@
 {
   "name": "coral-island-crop-scrape",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "Inlcuded are files in order to scrape coral island wiki for crops and their potential profits/sell prices/ etc",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -21,10 +21,10 @@
     "globals": "^15.9.0",
     "jsdom": "^24.1.1",
     "prettier": "^3.3.3",
+    "tsx": "^4.19.2",
     "typescript": "^5.5.4",
     "typescript-eslint": "^8.0.1"
   },
-  "dependencies": {},
   "scripts": {
     "generate-crops": "tsx src/utils/runScrape.ts",
     "format": "prettier --write 'src/**/*.{ts,js,json,md}'",

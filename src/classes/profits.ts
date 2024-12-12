@@ -4,7 +4,6 @@ import {
   Profitability,
   ProfitabilityConstructorArgs,
   ProfitsConstructorArgs,
-  SellPrice,
 } from '../types/types';
 
 export class Profits {

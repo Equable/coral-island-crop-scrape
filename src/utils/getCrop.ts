@@ -85,7 +85,17 @@ const getSeasons = (document: Document) => {
   if (seasonsText?.toLocaleLowerCase()?.includes(FALL)) {
     seasonsArray.push(FALL);
   }
-  return seasonsArray;
+  return seasonsArray.length > 0
+    ? seasonsArray
+    : [SPRING, SUMMER, FALL, WINTER];
+};
+
+const getIsOceanCrop = (document: Document) => {
+  const itemGroupText = document.querySelector(
+    '[data-source="item_group"]',
+  )?.textContent;
+
+  return !!itemGroupText?.toLocaleLowerCase()?.includes('ocean crop');
 };
 
 export const getCrop = async (url: string) => {
@@ -99,6 +109,7 @@ export const getCrop = async (url: string) => {
   const seasons = getSeasons(document);
   const { sellPrice, sellPriceImproved } = getSellPrices(document);
   const products = getProducts(document);
+  const isOceanCrop = getIsOceanCrop(document);
   const isSapling = SAPLING === seedType;
   if (
     cropCost &&
@@ -142,6 +153,7 @@ export const getCrop = async (url: string) => {
       cropType,
       seedType,
       regrowthTime,
+      isOceanCrop,
       quantityPerHarvest,
       totalPossibleHarvests,
       totalProcessTime: cropLifeSpan,
@@ -152,6 +164,30 @@ export const getCrop = async (url: string) => {
       ...artisanCropParts,
     });
     return crop;
+  }
+  if (!cropCost) {
+    console.log('crop cost missing');
+  }
+  if (!cropType) {
+    console.log('crop type missing');
+  }
+  if (!seedType) {
+    console.log('seed type missing');
+  }
+  if (!growthTime) {
+    console.log('growth time missing');
+  }
+  if (!quantityPerHarvest) {
+    console.log('quantity per harvest missing');
+  }
+  if (seasons.length <= 0) {
+    console.log('seasons missing');
+  }
+  if (!name) {
+    console.log('name missing');
+  }
+  if (!sellPrice) {
+    console.log('sell price missing');
   }
   return;
 };

@@ -16,6 +16,7 @@ export class Crop extends Profits implements CropType {
   growthTime: number;
   seasons: EnumSeasons[];
   regrowthTime?: number;
+  isOceanCrop: boolean;
   [OIL]?: Artisan;
   [JAR]?: Artisan;
   [HONEY]?: Artisan;
@@ -35,6 +36,7 @@ export class Crop extends Profits implements CropType {
     totalProcessTime,
     name,
     seasons,
+    isOceanCrop,
     growthTime,
     cropType,
     seedType,
@@ -60,6 +62,7 @@ export class Crop extends Profits implements CropType {
     this.name = name;
     this.seasons = seasons;
     this.growthTime = growthTime;
+    this.isOceanCrop = isOceanCrop;
     this.cropType = cropType;
     this.seedType = seedType;
     this.regrowthTime = regrowthTime ?? 0;
