@@ -11,7 +11,7 @@ const getList = (document: Document) => {
     if (
       alphabet.includes(
         [...element.children]?.[0]?.textContent?.trim()?.toLocaleLowerCase() ||
-          '',
+        '',
       )
     ) {
       return element.children?.[1];
@@ -52,6 +52,9 @@ export const getAllCrops = async () => {
         console.log(`FAILED to obtain crop from ${url}`);
       }
       return res;
+    }).catch(error => {
+      console.log(`${url} had the following error`)
+      console.log(error)
     });
     if (crop) {
       crops.push(crop);
